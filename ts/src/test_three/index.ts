@@ -16,13 +16,13 @@ console.log(sum(1)(2)); // 3 :)
 
 // let's make it more functional now...
 
-type Sum = (a: number) => (b: number) => number;
+export type Sum = (a: number) => (b: number) => number;
 const functionalSum: Sum = (a) => (b) => a + b;
 
 console.log(functionalSum(1)(2)); // 3
 
-type Increase = (a: number) => number;
-type Decrease = (a: number) => number;
+export type Increase = (a: number) => number;
+export type Decrease = (a: number) => number;
 
 const increase: Increase = sum(1);
 const decrease: Decrease = sum(-1);
@@ -36,7 +36,7 @@ type CurriedSum = (f: (a: number, b: number) => number) => (a: number) => (b: nu
 const curriedSum: CurriedSum = (f: (a: number, b: number) => number) => (a: number) => (b: number) => f(a, b);
 
 // Same stuff, just using parametric polymorphism
-type CurriedSumGeneric = <A, B, Z>(f: (a: A, b: B) => Z) => (a: A) => (b: B) => Z;
+export type CurriedSumGeneric = <A, B, Z>(f: (a: A, b: B) => Z) => (a: A) => (b: B) => Z;
 const curriedSumGeneric: CurriedSumGeneric = (f) => (a) => (b) => f(a, b);
 
 const sumTwo = curriedSum(normalSum);

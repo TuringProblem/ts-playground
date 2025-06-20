@@ -8,7 +8,7 @@ function normalSumAll(xd: number[]): number {
 }
 console.log(normalSumAll([1, 2, 3, 4, 5]));
 
-type SumAll = (xs: number[]) => number;
+export type SumAll = (xs: number[]) => number;
 
 const sumAll: SumAll = (xd) => {
   // sum is the head of the list + the sum of the remaining [0] + 1
