@@ -12,7 +12,7 @@ const incrementToString: IncrementToStringExampleOne = (x: number) => tostring(i
 console.log(incrementToString(5));
 
 // ...this is the better the better approach using parametric polymorphism (or generics)
-type Compose = <A, B, C>(f: (x: B) => C, g: (x: A) => B) => (x: A) => C;
+type Compose = <P, Q, R>(f: (q: Q) => R, g: (p: P) => Q) => (p: P) => R; // I couldn't use a,b,c had to make it more mathematical lol
 const compose: Compose = (f, g) => (x) => f(g(x));
 const incrementToStringExampleTwo = compose(tostring, increment);
 console.log(incrementToStringExampleTwo(5));
