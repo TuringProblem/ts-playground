@@ -1,52 +1,4 @@
-type getLevel10Skills = (level: number) => boolean;
-enum SkillName {
-  Attack = "ATTACK",
-  Defense = "DEFENSE",
-  Magic = "MAGIC",
-  Ranged = "RANGED",
-}
-enum Trait {
-  STRONG = "STRONG",
-  FREE_SPIRIT = "FREE_SPIRIT",
-  SMART = "SMART",
-  AGILE = "AGILE",
-  LUCKY = "LUCKY",
-  CHARISMATIC = "CHARISMATIC",
-}
-type Skill = {
-  name: SkillName;
-  description: string;
-  level: number;
-};
-type Genetics = {
-  gene: string;
-  traits: Trait[];
-};
-type Class = {
-  skills: Skill[];
-};
-
-type AccountStates = {
-  Uuid: string;
-  userName: string;
-  accountAge: Date;
-  genetics: Genetics;
-  class: Class;
-};
-
-type DataExample = {
-  data: {
-    Uuid: string;
-    userName: string;
-    accountAge: Date;
-    genetics: Genetics;
-    class: Class;
-  };
-};
-
-interface BuildAccount {
-  handle: (element: DataExample) => DataExample;
-}
+import { DataExample, SkillName, Trait, Skill } from "./types";
 
 const exampleBuild: DataExample[] = [
   {
@@ -81,7 +33,6 @@ const exampleBuild: DataExample[] = [
       },
     },
   },
-
   {
     data: {
       Uuid: "3",
